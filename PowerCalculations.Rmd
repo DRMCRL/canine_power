@@ -4,7 +4,9 @@ author: "Steve Pederson"
 date: "03/05/2021"
 output: 
   html_document:
-      code_folding: "hide"
+    toc: yes
+    toc_float: yes
+    code_folding: "hide"
 ---
 
 ```{r setup, include=FALSE}
@@ -114,7 +116,8 @@ Given the above plot, a truncated normal distribution may be suitable for simula
 Note that we'll be using the Wilcoxon, so the exact distributional patterns are less relevant.
 Compare some simulated data to the real data.
 
-In the following the value provided for sd will track the initial variance, but diminishing in a sqrt pattern.
+In the following the value provided for sd will track the initial sd, but diminishing in a sqrt pattern.
+This in essence follows the pattern of a linear reduction for variance (&sigma;^2).
 For example, for a 50% reduction in Ki67, the sd for the reduced sample will be &#8730;(1 - 0.5)&sigma;.
 Likewise for a 70% reduction, the sd for simulation will be &#8730;(1 - 0.7)&sigma;.
 
@@ -303,7 +306,7 @@ Assuming an initial Ki67 positivity of 20%, choosing a sample size of 20 control
 When comparing between already reduced Ki67 positivity in the two treatment arms, this will provide a power of 70% to detect a reduction of 60% or more between the two treatment groups.
 This assumes a lower initial positivity (~10%) in the higher of the two treatment arms.
 
-## CT Scans
+# CT Scans
 
 Assuming that dogs from the above treatment arms go forward into the next step of the experiment, we need to assess the probability of relapse, and our ability to detect difference.
 According to the McEwen paper, the 100 day probability of being cancer-free for dogs with tumour volumes > 40cc is 50% of patients.
